@@ -10,12 +10,15 @@ export class KitapListesiComponent implements OnInit {
     ngOnInit(): void {
         console.log("on init");
     }
+
     sayfaBasligi: string = "Kitap Listesi";
     resimWidth: number = 50;
     resimMargin: number = 2;
     resimGoster: boolean = false;
 
     _listeFiltrele: string;
+
+    
 
     get listeFiltrele(): string {
         return this._listeFiltrele;
@@ -58,6 +61,10 @@ export class KitapListesiComponent implements OnInit {
     constructor() {
         this.kitaplariFiltreleSonuc = this.kitaplar;
         this.listeFiltrele = "Da vinci";
+    }
+
+    onRaitingClicked(message:string):void {
+        this.sayfaBasligi="Kitap Listesi :  " + message;
     }
 
     performFiltrele(filtre: string): IKitap[] {

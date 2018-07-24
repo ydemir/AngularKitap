@@ -40,7 +40,7 @@
             <td>{{kitap.yayinTarihi}}</td>
             <td>{{kitap.fiyati | currency:'₺':'symbol':'1.2-2'}}</td>
             <td>
-              <ky-puan [rating]='kitap.puani'></ky-puan>
+              <ky-puan [rating]='kitap.puani' (ratingClicked)='onRaitingClicked($event)'></ky-puan>
             </td>
           </tr>
         </tbody>
